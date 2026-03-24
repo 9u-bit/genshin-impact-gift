@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title> Genshin Impact 4Ewa </title>
+</head>
+<body>
+    <div class="background">
+        <h1 class="greeting"> Feliz cumpleaños Ewa 🥳 </h1>
+        <h2 class="sign"> - Gu, 240326 </h2>
+        <nav class="genshin-nav">
+            <button onclick="showTab('resin')"> Resin Calculator </button>
+            <button onclick="showTab('character')"> Character Info </button> 
+            <button> Teyvat Timeline </button>
+        </nav>
+        <div class="glass-box">
+            <!-- Resin -->
+            <div id="resin" class="tab-content">
+                <div class="resin-header">
+                    <img src="/assets/images/resin.png" alt="" class="resin-icon">
+                    <h3> Resin Dashboard </h3>
+                </div>
+                <div class="resin-input">
+                    <input type="number" id="current-resin" placeholder="Current Resin">
+                    <button class="calculation-btn"> Calculate </button>
+                </div>
+                <p class="result"> Full at: <span id="time-result"> -- : -- </span></p>
+                <div class="noelle-speech">
+                    <p id="noelle-message">"Leave it to me! I'll track your resin while you rest."</p>
+                </div>
+                <img src="/assets/images/noelle-helper.png" alt="" class="noelle-helper">
+            </div>
+            <!-- Character -->
+            <div id="character" class="tab-content" style="display: none;">
+                <div class="character-header">
+                    <div class="title-group">
+                        <img src="/assets/images/noelle-helper.png" alt="" class="resin-icon">
+                        <h3> Character Gallery </h3>
+                    </div>
+                    <div class="search-container"> <input type="text" id="char-search" placeholder="Search character..." onkeyup="filterCharacters()">
+                    </div>
+                </div>
+                
+                <div class="char-grid" id="char-gallery"></div>
+
+                <div id="char-details" style="display: none;">
+                    <button class="calculation-btn" onclick="closeDetails()"> ← Back </button>
+    
+                    <div id="details-content">
+                        <div class="details-header">
+                            <img id="det-icon" src="" alt="" class="char-icon-large">
+                            <div class="det-info">
+                                <h2 id="det-name"></h2>
+                                <p id="det-title"></p>
+                                <p id="det-meta"></p>
+                            </div>
+                        </div>
+
+                        <div class="det-description">
+                        <p id="det-desc"></p>
+                    </div>
+
+                    <h4 class="section-title">ASCENSION MATERIALS</h4>
+                    <div id="mat-grid" class="material-grid"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/script.js"></script>
+</body>
+</html>
